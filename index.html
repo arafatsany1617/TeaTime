@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tea House</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/bbfc4be646.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { clifford: "#da373d" },
+            fontFamily: { manrope: ["Manrope", "sans-serif"] },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Custom animation for floating overlay */
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+      }
+      .float { animation: float 3s ease-in-out infinite; }
+    </style>
+  </head>
+  <body class="font-manrope bg-slate-50 scroll-smooth">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+      <div class="max-w-screen-xl mx-auto flex items-center justify-between px-6 py-4">
+        <div class="flex items-center gap-2">
+          <img class="h-10" src="./images/cup.png" alt="Tea House Logo" />
+          <span class="font-bold text-xl">Tea House</span>
+        </div>
+        <div class="hidden md:flex space-x-6 font-semibold">
+          <a href="#" class="hover:text-orange-500">Home</a>
+          <a href="#products" class="hover:text-orange-500">Products</a>
+          <a href="#about" class="hover:text-orange-500">About</a>
+          <a href="#testimonials" class="hover:text-orange-500">Reviews</a>
+          <a href="#gallery" class="hover:text-orange-500">Gallery</a>
+          <a href="#blog" class="hover:text-orange-500">Blog</a>
+          <a href="#contact" class="hover:text-orange-500">Contact</a>
+        </div>
+        <div class="md:hidden">
+          <i id="menu-btn" class="fa-solid fa-bars text-2xl cursor-pointer"></i>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+        <a href="#" class="block px-6 py-3 hover:bg-orange-50">Home</a>
+        <a href="#products" class="block px-6 py-3 hover:bg-orange-50">Products</a>
+        <a href="#about" class="block px-6 py-3 hover:bg-orange-50">About</a>
+        <a href="#testimonials" class="block px-6 py-3 hover:bg-orange-50">Reviews</a>
+        <a href="#gallery" class="block px-6 py-3 hover:bg-orange-50">Gallery</a>
+        <a href="#blog" class="block px-6 py-3 hover:bg-orange-50">Blog</a>
+        <a href="#contact" class="block px-6 py-3 hover:bg-orange-50">Contact</a>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-screen-xl mx-auto px-6 md:px-16 lg:px-28 pt-24">
+      <!-- Hero Section -->
+      <header class="lg:flex pt-10 mb-20 items-center">
+        <div class="flex-1" data-aos="fade-up">
+          <h1 class="text-5xl md:text-7xl font-bold leading-snug">
+            It's good <br />
+            tea time at The <br />
+            Tea House
+          </h1>
+          <p class="text-gray-600 w-3/4 mt-6 mb-6">
+            Tea and Botanical Solutions Supplier Give Optimum Satisfaction To Your Taste Buds.
+          </p>
+          <button
+            class="bg-gradient-to-r from-orange-500 to-red-500 px-6 py-3 rounded-lg text-white font-bold hover:scale-105 duration-300 transition-all"
+          >
+            Explore More
+            <i class="fa-solid fa-arrow-right text-xl -rotate-45"></i>
+          </button>
+        </div>
+        <div class="relative flex-1 mt-10 lg:mt-0" data-aos="fade-left">
+          <img class="w-full" src="./images/banner.png" alt="banner" />
+          <div class="absolute float flex items-center bg-white shadow-lg px-3 py-3 md:px-8 lg:py-4 rounded-lg top-28 md:top-80 md:left-24 lg:left-28">
+            <i class="fa-solid fa-star text-2xl text-amber-500"></i>
+            <div class="ml-3">
+              <h2 class="lg:text-2xl font-bold">5.00</h2>
+              <p class="text-gray-500">Trust Pilot Ratings</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Products -->
+      <section id="products" class="py-12 lg:py-24">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h1 class="text-3xl md:text-4xl font-bold mb-5">Our Featured Products</h1>
+          <p class="text-gray-600 max-w-xl mx-auto">
+            There are many variations of tea available, but our top picks are here for you.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="rounded-lg shadow-md bg-gray-50 overflow-hidden hover:scale-105 duration-300" data-aos="zoom-in">
+            <img class="mx-auto pt-4" src="./images/tea-1.png" alt="Milk Tea" />
+            <div class="p-4">
+              <h2 class="font-bold text-xl">Milk Tea</h2>
+              <p class="text-gray-600 mb-2">Creamer could be replaced by fresh milk</p>
+              <button class="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600">View Details</button>
+            </div>
+          </div>
+          <div class="rounded-lg shadow-md bg-gray-50 overflow-hidden hover:scale-105 duration-300" data-aos="zoom-in" data-aos-delay="100">
+            <img class="mx-auto pt-4" src="./images/tea-2.png" alt="Black Tea" />
+            <div class="p-4">
+              <h2 class="font-bold text-xl">Black Tea</h2>
+              <p class="text-gray-600 mb-2">Rich in flavor, perfect for a refreshing break</p>
+              <button class="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600">View Details</button>
+            </div>
+          </div>
+          <div class="rounded-lg shadow-md bg-gray-50 overflow-hidden hover:scale-105 duration-300" data-aos="zoom-in" data-aos-delay="200">
+            <img class="mx-auto pt-4" src="./images/tea-3.png" alt="Green Tea" />
+            <div class="p-4">
+              <h2 class="font-bold text-xl">Green Tea</h2>
+              <p class="text-gray-600 mb-2">A healthy choice with natural antioxidants</p>
+              <button class="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600">View Details</button>
+            </div>
+          </div>
+          <div class="rounded-lg shadow-md bg-gray-50 overflow-hidden hover:scale-105 duration-300" data-aos="zoom-in" data-aos-delay="300">
+            <img class="mx-auto pt-4" src="./images/tea-4.png" alt="Lemon Tea" />
+            <div class="p-4">
+              <h2 class="font-bold text-xl">Lemon Tea</h2>
+              <p class="text-gray-600 mb-2">A tangy twist for a refreshing mood</p>
+              <button class="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600">View Details</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Choose Us -->
+      <section id="about" class="py-16 bg-orange-50 rounded-lg">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h1 class="text-3xl md:text-4xl font-bold mb-5">Why Choose Us</h1>
+          <p class="text-gray-600 max-w-2xl mx-auto">We provide premium quality tea with unique taste and fresh aroma.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white shadow-md rounded-xl p-6 text-center hover:shadow-lg" data-aos="fade-up" data-aos-delay="100">
+            <i class="fa-solid fa-truck-fast text-4xl text-orange-500 mb-4"></i>
+            <h3 class="text-xl font-bold mb-2">Fast Delivery</h3>
+            <p class="text-gray-600">Get your favorite tea delivered to your doorstep quickly.</p>
+          </div>
+          <div class="bg-white shadow-md rounded-xl p-6 text-center hover:shadow-lg" data-aos="fade-up" data-aos-delay="200">
+            <i class="fa-solid fa-leaf text-4xl text-green-600 mb-4"></i>
+            <h3 class="text-xl font-bold mb-2">100% Organic</h3>
+            <p class="text-gray-600">We use only organic leaves sourced from trusted farms.</p>
+          </div>
+          <div class="bg-white shadow-md rounded-xl p-6 text-center hover:shadow-lg" data-aos="fade-up" data-aos-delay="300">
+            <i class="fa-solid fa-mug-hot text-4xl text-red-500 mb-4"></i>
+            <h3 class="text-xl font-bold mb-2">Fresh Taste</h3>
+            <p class="text-gray-600">Our tea guarantees freshness and unique aroma in every sip.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Slider -->
+      <section id="testimonials" class="py-16 bg-white">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h1 class="text-3xl md:text-4xl font-bold mb-5">What Our Customers Say</h1>
+        </div>
+        <div class="relative max-w-6xl mx-auto overflow-hidden">
+          <div id="testimonial-container" class="flex transition-transform duration-500 gap-6">
+            <div class="min-w-full bg-orange-50 shadow-md p-6 rounded-lg flex flex-col md:flex-row gap-6 items-center" data-aos="fade-up">
+              <img class="h-24 w-24 rounded-full" src="./images/man-1.png" alt="">
+              <div>
+                <p class="text-gray-600 mb-4">“Best tea I’ve ever had. Fresh, aromatic, and simply amazing!”</p>
+                <h4 class="font-bold">Hassan Ahmed</h4>
+                <p class="text-sm text-gray-500">Dhaka</p>
+              </div>
+            </div>
+            <div class="min-w-full bg-orange-50 shadow-md p-6 rounded-lg flex flex-col md:flex-row gap-6 items-center" data-aos="fade-up">
+              <img class="h-24 w-24 rounded-full" src="./images/man-2.png" alt="">
+              <div>
+                <p class="text-gray-600 mb-4">“Delivery was super fast. Packaging was neat and tea tasted perfect.”</p>
+                <h4 class="font-bold">Sultana Ahmed</h4>
+                <p class="text-sm text-gray-500">Sunamganj</p>
+              </div>
+            </div>
+            <div class="min-w-full bg-orange-50 shadow-md p-6 rounded-lg flex flex-col md:flex-row gap-6 items-center" data-aos="fade-up">
+              <img class="h-24 w-24 rounded-full" src="./images/man-3.png" alt="">
+              <div>
+                <p class="text-gray-600 mb-4">“Loved the organic touch. My family enjoys every sip.”</p>
+                <h4 class="font-bold">Arafat Sany</h4>
+                <p class="text-sm text-gray-500">Sylhet</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-center gap-4 mt-6">
+            <button id="prev" class="bg-orange-500 text-white px-4 py-2 rounded-lg">Prev</button>
+            <button id="next" class="bg-orange-500 text-white px-4 py-2 rounded-lg">Next</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery -->
+      <section id="gallery" class="py-16">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h1 class="text-3xl md:text-4xl font-bold mb-5">Our Gallery</h1>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <img class="rounded-lg shadow-md hover:scale-105 duration-300 cursor-pointer" src="./images/gallery1.jpg" alt="">
+          <img class="rounded-lg shadow-md hover:scale-105 duration-300 cursor-pointer" src="./images/gallery2.jpg" alt="">
+          <img class="rounded-lg shadow-md hover:scale-105 duration-300 cursor-pointer" src="./images/gallery3.jpg" alt="">
+          <img class="rounded-lg shadow-md hover:scale-105 duration-300 cursor-pointer" src="./images/gallery4.jpg" alt="">
+        </div>
+      </section>
+
+      <!-- Blog Section -->
+      <section id="blog" class="py-16 bg-orange-50 rounded-lg">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h1 class="text-3xl md:text-4xl font-bold mb-5">Tea Blog & Recipes</h1>
+          <p class="text-gray-600 max-w-2xl mx-auto">Discover tips, recipes, and guides to enjoy the best tea experience.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-lg" data-aos="fade-up">
+            <h3 class="font-bold text-xl mb-2">5 Ways to Brew Perfect Tea</h3>
+            <p class="text-gray-600 mb-2">Simple tips to get your tea taste amazing every time.</p>
+            <button class="text-orange-500 font-bold hover:underline">Read More</button>
+          </div>
+          <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-lg" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="font-bold text-xl mb-2">Herbal Tea Benefits</h3>
+            <p class="text-gray-600 mb-2">Learn why herbal teas are great for health and relaxation.</p>
+            <button class="text-orange-500 font-bold hover:underline">Read More</button>
+          </div>
+          <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-lg" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="font-bold text-xl mb-2">Tea Pairing Tips</h3>
+            <p class="text-gray-600 mb-2">Which foods go best with your favorite tea varieties.</p>
+            <button class="text-orange-500 font-bold hover:underline">Read More</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Newsletter -->
+      <section class="py-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg text-center text-white">
+        <h2 class="text-3xl font-bold mb-4">Join Our Tea Community</h2>
+        <p class="mb-6">Subscribe to get special offers and updates.</p>
+        <form class="flex flex-col md:flex-row justify-center gap-4 max-w-lg mx-auto">
+          <input type="email" placeholder="Enter your email"
+            class="flex-1 px-4 py-3 rounded-lg text-black outline-none">
+          <button class="bg-white text-orange-600 px-6 py-3 rounded-lg font-bold hover:scale-105 transition-all">Subscribe</button>
+        </form>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="py-16">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h1 class="text-3xl md:text-4xl font-bold mb-5">Contact Us</h1>
+          <p class="text-gray-600 max-w-xl mx-auto">We’d love to hear from you. Send us a message or visit us at our store.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <form class="bg-white p-6 shadow-md rounded-lg space-y-4" data-aos="fade-right">
+            <input type="text" placeholder="Your Name" class="w-full border p-3 rounded-lg" />
+            <input type="email" placeholder="Your Email" class="w-full border p-3 rounded-lg" />
+            <textarea placeholder="Your Message" rows="4" class="w-full border p-3 rounded-lg"></textarea>
+            <button class="bg-gradient-to-r from-orange-500 to-red-500 px-6 py-3 rounded-lg text-white font-bold hover:scale-105 duration-300">Send Message</button>
+          </form>
+          <div data-aos="fade-left">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14455.780757622799!2d91.40325284999999!3d25.0698468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3750daf49ba21823%3A0x3180c8d4ddeb5b9b!2sSunamganj!5e0!3m2!1sen!2sbd!4v1757168080095!5m2!1sen!2sbd" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-orange-100 text-gray-700 py-10 px-6 md:px-16 mt-16">
+      <div class="max-w-screen-xl mx-auto">
+        <div class="mb-8 flex flex-col md:flex-row justify-between items-center gap-6">
+          <img class="h-12" src="./images/cup.png" alt="Logo" />
+          <div class="flex items-center gap-2">
+            <h4 class="font-semibold">Ready to get started?</h4>
+            <button class="bg-gradient-to-r from-orange-500 to-red-500 px-4 py-2 rounded-lg text-white font-bold">Get Started</button>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div>
+            <h3 class="font-semibold text-lg mb-3">Quick Links</h3>
+            <ul class="space-y-2">
+              <li><a class="hover:text-orange-600" href="#">Home</a></li>
+              <li><a class="hover:text-orange-600" href="#products">Products</a></li>
+              <li><a class="hover:text-orange-600" href="#about">About</a></li>
+              <li><a class="hover:text-orange-600" href="#blog">Blog</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg mb-3">Our Services</h3>
+            <ul class="space-y-2">
+              <li><a class="hover:text-orange-600" href="#">Delivery</a></li>
+              <li><a class="hover:text-orange-600" href="#">Wholesale</a></li>
+              <li><a class="hover:text-orange-600" href="#">Catering</a></li>
+              <li><a class="hover:text-orange-600" href="#">Custom Orders</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg mb-3">Follow Us</h3>
+            <div class="flex gap-4">
+              <a href="#"><i class="fa-brands fa-facebook text-2xl hover:text-orange-600"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram text-2xl hover:text-orange-600"></i></a>
+              <a href="#"><i class="fa-brands fa-twitter text-2xl hover:text-orange-600"></i></a>
+            </div>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg mb-3">Contact</h3>
+            <p>123 Tea Street, Sunamganj</p>
+            <p>Email: teahouse12.com</p>
+            <p>Phone: +880 1600 500575</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+      // Mobile menu toggle
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Testimonials slider
+      const container = document.getElementById("testimonial-container");
+      const prevBtn = document.getElementById("prev");
+      const nextBtn = document.getElementById("next");
+      let index = 0;
+
+      nextBtn.addEventListener("click", () => {
+        index = (index + 1) % container.children.length;
+        container.style.transform = `translateX(-${index * 100}%)`;
+      });
+      prevBtn.addEventListener("click", () => {
+        index = (index - 1 + container.children.length) % container.children.length;
+        container.style.transform = `translateX(-${index * 100}%)`;
+      });
+
+      // Initialize AOS
+      AOS.init({ duration: 1000, once: true });
+    </script>
+  </body>
+</html>
